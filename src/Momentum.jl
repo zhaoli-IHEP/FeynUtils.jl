@@ -145,32 +145,18 @@ end # function coefficient_matrix
 # Created by Quan-feng Wu
 # Mar 26th, 2023
 """
-    get_loop_momenta( mom_list::Vector{Basic} )::Vector{Basic}
+    get_loop_momenta( mom::Union{Basic, Vector{Basic}} )::Vector{Basic}
 
-Find all loop momenta in `mom_list`.
+Find all loop momenta in `mom`.
 """
 function get_loop_momenta( 
-    mom_list::Vector{Basic} 
+    mom::Union{Basic, Vector{Basic}}
 )::Vector{Basic}
 ###################################################
 
-  single_mom_list = free_symbols(mom_list)
-  q_list = filter(is_loop_mom, single_mom_list)
-  sort!(q_list; by=get_loop_index)
-  return q_list
-
-end # function get_loop_momenta
-
-#################################
-function get_loop_momenta( 
-    mom::Basic 
-)::Vector{Basic}
-#################################
-
-  single_mom_list = free_symbols(mom)
+  single_mom_list = free_symbols( mom )
   q_list = filter( is_loop_mom, single_mom_list )
-  sort!(q_list; by=get_loop_index)
-
+  sort!( q_list; by=get_loop_index )
   return q_list
 
 end # function get_loop_momenta
@@ -181,18 +167,18 @@ end # function get_loop_momenta
 # Created by Quan-feng Wu
 # Mar 26th, 2023
 """
-    get_ext_momenta( mom_list::Vector{Basic} )::Vector{Basic}
+    get_ext_momenta( mom::Union{Basic, Vector{Basic}} )::Vector{Basic}
 
-Find all external momenta in `mom_list`.
+Find all external momenta in `mom`.
 """
 function get_ext_momenta( 
-    mom_list::Vector{Basic} 
+    mom::Union{Basic, Vector{Basic}}
 )::Vector{Basic}
 ###################################################
 
-  single_mom_list = free_symbols(mom_list)
-  k_list = filter(is_ext_mom, single_mom_list)
-  sort!(k_list; by=get_ext_index)
+  single_mom_list = free_symbols( mom )
+  k_list = filter( is_ext_mom, single_mom_list )
+  sort!( k_list; by=get_ext_index )
   return k_list
 
 end # function get_ext_momenta
