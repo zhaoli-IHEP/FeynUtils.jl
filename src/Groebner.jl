@@ -264,7 +264,7 @@ function get_Groebner_basis_v2(
     new_G = zero(Basic)
     n_term = length(G)
     for index in 1:n_term
-      the_coeff = AbstractAlgebra.coeff(G,index) 
+      the_coeff = AbstractAlgebra.coeff(G,index,1) 
       one_term = term(G,index)
       xpt_list = map( x->AbstractAlgebra.degree(one_term,x), new_xi_list )
 

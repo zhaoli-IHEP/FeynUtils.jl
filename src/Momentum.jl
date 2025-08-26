@@ -133,7 +133,7 @@ function coefficient_matrix(
 
   return reduce(
     vcat,
-    (transpose ∘ map)( q -> SymEngine.coeff(mom, q), mom_list )
+    (transpose ∘ map)( q -> SymEngine.coeff(mom, q, 1), mom_list )
       for mom ∈ mom_poly_list
   )
 
