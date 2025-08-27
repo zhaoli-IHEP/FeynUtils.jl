@@ -6,15 +6,14 @@ project_hash = "5a536c3ebc5474ef002d0a2c17cb507990cda06d"
 
 [[deps.AbstractAlgebra]]
 deps = ["LinearAlgebra", "MacroTools", "Preferences", "Random", "RandomExtensions", "SparseArrays"]
-git-tree-sha1 = "34d32b62988ea50c169c9d4bef9cb4ce6906d305"
+git-tree-sha1 = "64537851a0dd2ad24648e1fb88bdd6b98adda4ba"
 uuid = "c3fe647b-3220-5bb0-a1ea-a7954cac585d"
-version = "0.44.13"
+version = "0.46.2"
 
     [deps.AbstractAlgebra.extensions]
     TestExt = "Test"
 
     [deps.AbstractAlgebra.weakdeps]
-    Requires = "ae029012-a4dd-5104-9daa-d747884805df"
     Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[deps.Artifacts]]
@@ -23,9 +22,9 @@ version = "1.11.0"
 
 [[deps.Atomix]]
 deps = ["UnsafeAtomics"]
-git-tree-sha1 = "b5bb4dc6248fde467be2a863eb8452993e74d402"
+git-tree-sha1 = "29bb0eb6f578a587a49da16564705968667f5fa8"
 uuid = "a9b6321e-bd34-4604-b9c9-b65b8de01458"
-version = "1.1.1"
+version = "1.1.2"
 
     [deps.Atomix.extensions]
     AtomixCUDAExt = "CUDA"
@@ -46,9 +45,9 @@ version = "1.0.3"
 
 [[deps.Compat]]
 deps = ["TOML", "UUIDs"]
-git-tree-sha1 = "3a3dfb30697e96a440e4149c8c51bf32f818c0f3"
+git-tree-sha1 = "0037835448781bb46feb39866934e243886d756a"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "4.17.0"
+version = "4.18.0"
 weakdeps = ["Dates", "LinearAlgebra"]
 
     [deps.Compat.extensions]
@@ -76,9 +75,9 @@ version = "0.9.5"
 
 [[deps.FLINT_jll]]
 deps = ["Artifacts", "GMP_jll", "JLLWrappers", "Libdl", "MPFR_jll", "OpenBLAS32_jll"]
-git-tree-sha1 = "c08ef035014de2a925098c4df99d44f223476705"
+git-tree-sha1 = "65248c4cbdd4392072d39dff23b385bac47e7b12"
 uuid = "e134572f-a0d5-539d-bddf-3cad8db41a82"
-version = "300.200.201+0"
+version = "301.300.102+0"
 
 [[deps.GMP_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -87,9 +86,9 @@ version = "6.3.0+0"
 
 [[deps.Groebner]]
 deps = ["AbstractAlgebra", "Atomix", "Combinatorics", "Logging", "Nemo", "PrecompileTools", "Primes", "Printf", "Random"]
-git-tree-sha1 = "e0fb12d3d182d4843273d23c5f27b835d75ab4df"
+git-tree-sha1 = "ac62b50c35fabe39335ea0e0b53774c56425d4ac"
 uuid = "0b43b601-686d-58a3-8a1c-6623616c7cd4"
-version = "0.9.4"
+version = "0.9.5"
 
     [deps.Groebner.extensions]
     GroebnerDynamicPolynomialsExt = "DynamicPolynomials"
@@ -159,10 +158,10 @@ uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 version = "0.5.16"
 
 [[deps.Nemo]]
-deps = ["AbstractAlgebra", "FLINT_jll", "Libdl", "LinearAlgebra", "Random", "RandomExtensions", "SHA", "TOML"]
-git-tree-sha1 = "e4ce067cd0367352550678dc3377ec5c335ee8b0"
+deps = ["AbstractAlgebra", "FLINT_jll", "LinearAlgebra", "Random", "RandomExtensions", "SHA"]
+git-tree-sha1 = "a5e5ca8dd3f817b4054a7fa42f90d920d88dab4f"
 uuid = "2edaba10-b0f1-5616-af89-8c11ac63239a"
-version = "0.49.5"
+version = "0.51.1"
 
 [[deps.OpenBLAS32_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl"]
@@ -194,9 +193,9 @@ version = "1.2.1"
 
 [[deps.Preferences]]
 deps = ["TOML"]
-git-tree-sha1 = "9306f6085165d270f7e3db02af26a400d580f5c6"
+git-tree-sha1 = "0f27480397253da18fe2c12a4ba4eb9eb208bf3d"
 uuid = "21216c6a-2e73-6563-6e65-726566657250"
-version = "1.4.3"
+version = "1.5.0"
 
 [[deps.Primes]]
 deps = ["IntegerMathUtils"]
@@ -211,9 +210,9 @@ version = "1.11.0"
 
 [[deps.ProgressMeter]]
 deps = ["Distributed", "Printf"]
-git-tree-sha1 = "13c5103482a8ed1536a54c08d0e742ae3dca2d42"
+git-tree-sha1 = "fbb92c6c56b34e1a2c4c36058f68f332bec840e7"
 uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
-version = "1.10.4"
+version = "1.11.0"
 
 [[deps.Random]]
 deps = ["SHA"]
@@ -268,15 +267,17 @@ version = "7.7.0+0"
 
 [[deps.SymEngine]]
 deps = ["Compat", "Libdl", "LinearAlgebra", "RecipesBase", "Serialization", "SpecialFunctions", "SymEngine_jll"]
-git-tree-sha1 = "9a66fef88d10cfa264c61181221e405d7276f08b"
+git-tree-sha1 = "e9a463c8954fc64be07b2d7c4116b3edf411d0d5"
 uuid = "123dc426-2d89-5057-bbad-38513e3affd8"
-version = "0.12.0"
+version = "0.13.0"
 
     [deps.SymEngine.extensions]
     SymEngineSymbolicUtilsExt = "SymbolicUtils"
+    SymEngineTermInterfaceExt = "TermInterface"
 
     [deps.SymEngine.weakdeps]
     SymbolicUtils = "d1185830-fcd6-423d-90d6-eec64667417b"
+    TermInterface = "8ea1fca8-c5ef-4a55-8b96-4e9afe9c9a3c"
 
 [[deps.SymEngine_jll]]
 deps = ["Artifacts", "GMP_jll", "JLLWrappers", "Libdl", "MPC_jll", "MPFR_jll"]
