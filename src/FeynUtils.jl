@@ -47,7 +47,7 @@ export coefficient_matrix
 export get_loop_momenta, get_ext_momenta
 export get_rref_fermat, rational_function_simplify, numer_denom_fermat, numer_denom_simplify
 export findmatched
-export generate_BTF_matrix, BTF_inverse
+export generate_BTF_matrix, generate_BTF_perm, BTF_inverse
 
 
 ###################

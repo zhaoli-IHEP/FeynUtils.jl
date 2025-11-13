@@ -74,6 +74,67 @@ end # function generate_condensation_matrix
 
 
 
+
+
+
+#######################################################
+function generate_BTF_perm( 
+    the_mat::Matrix{Basic},
+)::Matrix{Basic}
+#######################################################
+
+  mat_nr, mat_nc = size( the_mat )
+  @assert mat_nr == mat_nc
+
+  adj_mat = Matrix{Int64}(undef,mat_nr,mat_nc)
+  for rr in 1:mat_nr, cc in 1:mat_nc
+    if rr == cc || iszero(the_mat[rr,cc]) 
+      adj_mat[rr,cc] = zero(Int64)
+    else
+      adj_mat[rr,cc] = one(Int64)
+    end # if
+  end # for rr, cc
+
+  strong_components_list = generate_strong_components_list( adj_mat )
+
+  condensation_mat = generate_condensation_matrix( strong_components_list, adj_mat )
+
+  new_indices = Int64[]
+
+  nr, nc = size( condensation_mat )
+  tag_list = collect(1:nc)
+  while !isempty( tag_list )
+    nr, nc = size( condensation_mat )
+    null_indices = findall( cc -> all(iszero,condensation_mat[1:nr,cc]), 1:nc )
+
+    for one_index in null_indices
+      append!( new_indices, strong_components_list[tag_list[one_index]] )
+    end # for one_index
+  
+    condensation_mat = condensation_mat[ 1:end .∉ [null_indices], 1:end .∉ [null_indices] ]
+    tag_list = tag_list[ 1:end .∉ [null_indices] ]
+  end # while
+
+  Pmat = zero( the_mat )
+  for one_index in new_indices
+    Pmat[new_indices[one_index],one_index] = one(Basic)
+  end # for one_index
+
+  return Pmat
+
+
+end # function generate_BTF_perm
+
+
+
+
+
+
+
+
+
+
+
 #######################################################
 function generate_BTF_matrix( 
     Nmat::Matrix{Basic},
